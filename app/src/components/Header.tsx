@@ -1,6 +1,5 @@
 import { Box, Typography, Link } from '@mui/material';
 import { useEffect, useState } from 'react';
-// import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -64,11 +63,28 @@ const Header = () => {
         sx={{ 
           fontSize: '1.2rem',
           fontWeight: 600,
-          marginBottom: '1rem'
+          marginBottom: '0.5rem',
+          color: 'text.secondary'
         }}
       >
-        I'm a Junior Software Engineer who loves to learn!
+        I'm a Junior Web Dev based out of Washington, DC (.NET, Typescript, Python)
       </Typography>
+      {/* <Box
+        component="nav"
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '2rem',
+          marginBottom: '0.3rem'
+        }}
+      >
+        <Link href="https://github.com/cooperglavin" target="_blank" rel="noopener noreferrer">
+          <GitHubIcon />
+        </Link>
+        <Link href="https://www.linkedin.com/in/cooper-glavin-0000000000/" target="_blank" rel="noopener noreferrer">
+          <LinkedInIcon />
+        </Link>
+      </Box> */}
       <Box
         component="nav"
         sx={{

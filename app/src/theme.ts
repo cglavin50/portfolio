@@ -1,6 +1,5 @@
 import { createTheme } from '@mui/material/styles';
 
-// Common settings for both themes
 const commonSettings = {
   typography: {
     fontFamily: "'Courier New', Courier, monospace",
@@ -17,45 +16,6 @@ const commonSettings = {
   },
 };
 
-// export const theme = createTheme({
-//   ...commonSettings,
-//   palette: {
-//     mode: 'dark',
-//     primary: {
-//       main: '#90caf9',  // Lighter blue for dark mode
-//     },
-//     text: {
-//       primary: '#ffffff',
-//       secondary: '#b0b0b0',
-//     },
-//     background: {
-//       paper: '#1e1e1e',
-//       default: '#121212',
-//     },
-//     navigation: {
-//       hover: '#FFD700', // A nice gold/yellow color for dark mode
-//     },
-//   },
-//   palette: {
-//     mode: 'light',
-//     primary: {
-//       main: '#1976d2',
-//     },
-//     text: {
-//       primary: '#2A2A2A',
-//       secondary: '#565656',
-//     },
-//     background: {
-//       paper: '#ffffff',
-//       default: '#fafafa',
-//     },
-//     navigation: {
-//       hover: '#1976d2', // Same as primary.main for light mode
-//     },
-//   },
-// });
-
-// Light theme settings
 export const lightTheme = createTheme({
   ...commonSettings,
   palette: {
@@ -72,7 +32,7 @@ export const lightTheme = createTheme({
       default: '#fafafa',
     },
     navigation: {
-      hover: '#1976d2', // Same as primary.main for light mode
+      hover: '#1976d2',
     },
   },
 });
@@ -83,7 +43,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#90caf9',  // Lighter blue for dark mode
+      main: '#90caf9', 
     },
     text: {
       primary: '#ffffff',
@@ -94,7 +54,7 @@ export const darkTheme = createTheme({
       default: '#121212',
     },
     navigation: {
-      hover: '#FFD700', // A nice gold/yellow color for dark mode
+      hover: '#FFD700',
     },
   },
 });  
