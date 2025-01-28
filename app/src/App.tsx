@@ -19,7 +19,7 @@ const App = () => {
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme} disableTransitionOnChange>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <Box sx={{ 
         scrollBehavior: 'smooth',

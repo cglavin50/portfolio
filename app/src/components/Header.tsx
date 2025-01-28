@@ -67,24 +67,8 @@ const Header = () => {
           color: 'text.secondary'
         }}
       >
-        I'm a Junior Web Dev based out of Washington, DC (.NET, Typescript, Python)
+        A Junior Web Dev based out of Washington, DC (.NET, Typescript, Python)
       </Typography>
-      {/* <Box
-        component="nav"
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          marginBottom: '0.3rem'
-        }}
-      >
-        <Link href="https://github.com/cooperglavin" target="_blank" rel="noopener noreferrer">
-          <GitHubIcon />
-        </Link>
-        <Link href="https://www.linkedin.com/in/cooper-glavin-0000000000/" target="_blank" rel="noopener noreferrer">
-          <LinkedInIcon />
-        </Link>
-      </Box> */}
       <Box
         component="nav"
         sx={{

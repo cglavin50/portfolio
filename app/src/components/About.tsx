@@ -1,7 +1,8 @@
-import { Box, Typography, Link, Stack } from '@mui/material';
+import { Box, Typography, Link, Stack, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ArticleIcon from '@mui/icons-material/Article';  // For Medium
+import ArticleIcon from '@mui/icons-material/Article';
+import DescriptionIcon from '@mui/icons-material/Description';
 import profilePic from '../assets/Cooper.jpg'; // Adjust path as needed
 
 const About = () => {
@@ -28,16 +29,19 @@ const About = () => {
       }}>
         <Box sx={{ flex: 1 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            Hello! I'm Cooper, a passionate Junior Software Engineer with a love for building innovative solutions. 
-            I specialize in full-stack development and enjoy tackling complex problems.
+            Hello! I'm Cooper, a junior Web Developer with a passion for security. 
+            Synthesizing my experience in Network Security research and Cybersecurity companies, I look to build scalable, secure web solutions. 
+            I have professional experience across multiple tech stacks, and am currently focusing on fullstack development with .NET Core and Blazor.
+            See my resume <Link href={`${import.meta.env.BASE_URL}/Coopers_Resume.pdf`} target="_blank" rel="noopener noreferrer">here</Link>.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            When I'm not coding, you can find me [Your Interests/Hobbies]. I believe in continuous learning 
-            and staying up-to-date with the latest technologies and best practices in software development.
+            I have a personal passion for digital privacy, and believe that the proper tooling needs to become more accessible to the general public.
+            When I'm not at work, I'm typically found tinkering with my raspberry pi, and experimenting self-hosting technologies to promote data ownership.
+            {/* Add link to pihole tutorial */}
           </Typography>
           <Typography variant="body1">
-            Currently, I'm focused on [Your Current Focus/Technologies] and always looking for new challenges 
-            and opportunities to grow as a developer.
+            Currently I'm a Fullstack Dev at <Link href="https://www.easydynamics.com/" target="_blank" rel="noopener noreferrer">Easy Dynamics</Link>, 
+            and always looking for new challenges and opportunities to grow as a developer - specifically in the areas of security and privacy.
           </Typography>
         </Box>
 
@@ -76,14 +80,17 @@ const About = () => {
               }
             }}
           >
-            <Link href="https://github.com/cooperglavin" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/cglavin50" target="_blank" rel="noopener noreferrer">
               <GitHubIcon sx={{ fontSize: 28 }} />
             </Link>
-            <Link href="https://www.linkedin.com/in/cooper-glavin-0000000000/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/cooper-glavin-5852351aa/" target="_blank" rel="noopener noreferrer">
               <LinkedInIcon sx={{ fontSize: 28 }} />
             </Link>
-            <Link href="https://medium.com/@cooperglavin" target="_blank" rel="noopener noreferrer">
+            <Link href="https://medium.com/@ceg126" target="_blank" rel="noopener noreferrer">
               <ArticleIcon sx={{ fontSize: 28 }} />
+            </Link>
+            <Link href={`${import.meta.env.BASE_URL}/Coopers_Resume.pdf`} target="_blank" rel="noopener noreferrer">
+              <DescriptionIcon sx={{ fontSize: 28 }} />
             </Link>
           </Stack>
         </Box>

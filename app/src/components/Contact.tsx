@@ -28,12 +28,11 @@ const Contact = () => {
               },
             }}
           >
-            your.email@example.com
+            cooperglavin@gmail.com
           </Link>
         </Box>
         <Typography variant="body1" sx={{ marginTop: '2rem' }}>
-          I'm always interested in hearing about new opportunities and exciting projects. 
-          Feel free to reach out if you'd like to connect!
+          I'm always looking to learn and grow. If you have any questions or would like to connect, please reach out!
         </Typography>
       </Container>
     </Box>
