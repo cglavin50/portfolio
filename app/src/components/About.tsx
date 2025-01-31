@@ -30,7 +30,7 @@ const About = () => {
         <Box sx={{ flex: 1 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
             Hello! I'm Cooper, a junior Web Developer with a passion for security. 
-            Synthesizing my experience in Network Security research and Cybersecurity companies, I look to build scalable, secure web solutions. 
+            Synthesizing my experience in Network Security research and Cybersecurity companies, I enjoy building scalable, secure web solutions. 
             I have professional experience across multiple tech stacks, and am currently focusing on fullstack development with .NET Core and Blazor.
             See my resume <Link href={`${import.meta.env.BASE_URL}/Coopers_Resume.pdf`} target="_blank" rel="noopener noreferrer">here</Link>.
           </Typography>
