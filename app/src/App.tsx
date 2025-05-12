@@ -21,15 +21,15 @@ const App = () => {
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <CssBaseline />
-      <Box sx={{ 
+      <Box sx={{
         scrollBehavior: 'smooth',
         '& > section': {
           scrollMarginTop: '64px',
         }
       }}>
         <Header />
-        <IconButton 
-          sx={{ 
+        <IconButton
+          sx={{
             position: 'fixed',
             top: 16,
             right: 16,

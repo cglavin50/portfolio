@@ -1,20 +1,29 @@
-import { Box, Typography, Container, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import { Box, Typography, Link, Container, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import homelabImg from '../assets/portfolio-imgs/homelab-dashboard.png'
 
 interface ProjectProps {
   title: string;
   description: string;
+  url: string;
   imageUrl: string;
   technologies: string[];
 }
 
 const projects: ProjectProps[] = [
   {
-    title: "Project 1",
-    description: "Description of your first project. What it does, why you built it, and what you learned.",
-    imageUrl: "/placeholder.jpg", // Add your image path
-    technologies: ["React", "TypeScript", "Material-UI"],
+    title: "Raspberry Pi Homelab",
+    description: "I manage a lightweight homelab using a Raspberry Pi. Configuration and automated deployments are managed with ansible and github actions runners, with all services running through docker compose stacks. Services are reverse-proxied through Caddy for centralized HTTPS and logging, with Adguard Home providing ad-blocking and DNS rewrites to local-only services. Monitoring is managed with Prometheus + Grafana, with AlertManager discord hooks for alerts.",
+    imageUrl: homelabImg, // Add your image path
+    technologies: ["Ansible", "Docker", "Promteheus + Grafana", "Bash", "Make"],
+    url: "https://github.com/cglavin50/homelab",
   },
-  // Add more projects as needed
+  // {
+  //   title: "SureSwitch IoT Generator Tool",
+  //   description: "Responsible for building out the ESP32 code for IoT product. Handles access-mode boot for easy input of residential wifi connection over HTTPS, runs test via commands sent from mobile app, and reports monitoring data and test results to mobile + web app.",
+  //   imageUrl: "",
+  //   technologies: ["C", "Azure", ".NET", "Esp32", "MQTT"],
+  //   url: "",
+  // },
 ];
 
 const Portfolio = () => {
@@ -23,7 +32,7 @@ const Portfolio = () => {
       id="portfolio"
       component="section"
       sx={{
-        minHeight: '100vh',
+        minHeight: '',
         paddingTop: '12rem',
         paddingBottom: '4rem',
       }}
@@ -36,21 +45,26 @@ const Portfolio = () => {
           {projects.map((project, index) => (
             <Grid item xs={12} md={6} key={index}>
               <Card sx={{ height: '100%' }}>
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={project.imageUrl}
-                  alt={project.title}
-                />
+                {project.imageUrl != "" ?
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={project.imageUrl}
+                    alt={project.title}
+                  /> : <br />
+                }
                 <CardContent>
-                  <Typography variant="h5" gutterBottom>
-                    {project.title}
-                  </Typography>
+                  <Link href={project.url}>
+                    <Typography variant="h5" gutterBottom>
+                      {project.title}
+                    </Typography>
+                  </Link>
                   <Typography variant="body2" color="text.secondary" paragraph>
                     {project.description}
                   </Typography>
+                  <Typography fontWeight={'bold'}>Technologies:</Typography>
                   <Typography variant="body2" color="text.secondary">
-                    Technologies: {project.technologies.join(', ')}
+                    {project.technologies.join(', ')}
                   </Typography>
                 </CardContent>
               </Card>
@@ -58,7 +72,7 @@ const Portfolio = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </Box >
   );
 };
 

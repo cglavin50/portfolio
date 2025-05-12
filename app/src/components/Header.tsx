@@ -48,9 +48,9 @@ const Header = () => {
         borderColor: 'divider'
       }}
     >
-      <Typography 
-        variant="h1" 
-        sx={{ 
+      <Typography
+        variant="h1"
+        sx={{
           fontSize: '2.2rem',
           fontWeight: 700,
           marginBottom: '0.3rem'
@@ -58,9 +58,9 @@ const Header = () => {
       >
         Hi, I'm Cooper Glavin
       </Typography>
-      <Typography 
-        variant="h2" 
-        sx={{ 
+      <Typography
+        variant="h2"
+        sx={{
           fontSize: '1.2rem',
           fontWeight: 600,
           marginBottom: '0.5rem',
@@ -98,7 +98,7 @@ const Header = () => {
               transform: activeSection === 'about' ? 'scaleX(1)' : 'scaleX(0)',
               transition: 'transform 0.3s ease-in-out'
             },
-            '&:hover': { 
+            '&:hover': {
               color: 'navigation.hover',
               '&:after': {
                 transform: 'scaleX(1)'
@@ -128,7 +128,7 @@ const Header = () => {
               transform: activeSection === 'portfolio' ? 'scaleX(1)' : 'scaleX(0)',
               transition: 'transform 0.3s ease-in-out'
             },
-            '&:hover': { 
+            '&:hover': {
               color: 'navigation.hover',
               '&:after': {
                 transform: 'scaleX(1)'
@@ -158,7 +158,7 @@ const Header = () => {
               transform: activeSection === 'contact' ? 'scaleX(1)' : 'scaleX(0)',
               transition: 'transform 0.3s ease-in-out'
             },
-            '&:hover': { 
+            '&:hover': {
               color: 'navigation.hover',
               '&:after': {
                 transform: 'scaleX(1)'

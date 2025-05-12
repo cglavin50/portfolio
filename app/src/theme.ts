@@ -43,7 +43,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#90caf9', 
+      main: '#90caf9',
     },
     text: {
       primary: '#ffffff',
@@ -57,7 +57,7 @@ export const darkTheme = createTheme({
       hover: '#FFD700',
     },
   },
-});  
+});
 
 // Extend the default theme interface to include our custom colors
 declare module '@mui/material/styles' {
