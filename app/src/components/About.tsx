@@ -19,9 +19,9 @@ const About = () => {
       }}
     >
       <Typography variant="h3" sx={{ marginBottom: '2rem', textAlign: 'center' }}>
-          About Me
+        About Me
       </Typography>
-      <Box sx={{ 
+      <Box sx={{
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-start',
@@ -29,19 +29,18 @@ const About = () => {
       }}>
         <Box sx={{ flex: 1 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            Hello! I'm Cooper, a junior Web Developer with a passion for security. 
-            Synthesizing my experience in Network Security research and Cybersecurity companies, I enjoy building scalable, secure web solutions. 
+            Hello! I'm Cooper, a junior Web Developer with a passion for security.
+            Synthesizing my experience in Network Security research and Cybersecurity companies, I enjoy building scalable, secure web solutions.
             I have professional experience across multiple tech stacks, and am currently focusing on fullstack development with .NET Core and Blazor.
             See my resume <Link href={`${import.meta.env.BASE_URL}/Coopers_Resume.pdf`} target="_blank" rel="noopener noreferrer">here</Link>.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
             I have a personal passion for digital privacy, and believe that the proper tooling needs to become more accessible to the general public.
-            When I'm not at work, I'm typically found tinkering with my raspberry pi, and experimenting self-hosting technologies to promote data ownership.
-            {/* Add link to pihole tutorial */}
+            When I'm not at work, I'm typically found tinkering with my raspberry pi homelab.
           </Typography>
           <Typography variant="body1">
-            Currently I'm a Fullstack Dev at <Link href="https://www.easydynamics.com/" target="_blank" rel="noopener noreferrer">Easy Dynamics</Link>, 
-            and always looking for new challenges and opportunities to grow as a developer - specifically in the areas of security and privacy.
+            Currently I'm a Fullstack Dev at <Link href="https://www.easydynamics.com/" target="_blank" rel="noopener noreferrer">Easy Dynamics</Link>,
+            and always looking for new challenges and opportunities to grow as a developer - specifically looking to get hands on experience with Cybersecurity and Devops.
           </Typography>
         </Box>
 
@@ -67,10 +66,10 @@ const About = () => {
               }
             }}
           />
-          <Stack 
-            direction="row" 
-            spacing={2} 
-            sx={{ 
+          <Stack
+            direction="row"
+            spacing={2}
+            sx={{
               mt: 2,
               '& a': {
                 color: 'text.secondary',
