@@ -2,7 +2,7 @@
 import Technologies from "./Technologies";
 import Experiences from "./Experiences";
 
-type Props = {
+interface Props {
   sectionRef: React.RefObject<HTMLDivElement | null>;
 }
 

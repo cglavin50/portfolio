@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-type TimelineEntry = {
+interface TimelineEntry {
   id: string;
   title: string;
   subtitle?: string;
@@ -8,6 +8,12 @@ type TimelineEntry = {
   description: string[];
   technologies: string[];
 }
+
+interface CardProps {
+  entry: TimelineEntry;
+  onSelect: (data: string) => void;
+}
+
 const TimelineCircle = () => {
   return (
     <div className="rounded-full w-6 h-6 bg-light-cyan" />
@@ -20,11 +26,6 @@ const TimelinePillar = () => {
       <div className="rounded-t-full rounded-b-full w-2 h-full bg-light-cyan" />
     </div>
   );
-}
-
-type CardProps = {
-  entry: TimelineEntry;
-  onSelect: (data: string) => void;
 }
 
 function TimelineCard({ entry, onSelect }: CardProps) {
@@ -40,7 +41,7 @@ function TimelineCard({ entry, onSelect }: CardProps) {
 
 
 export default function Experiences() {
-  const [selectedEntryId, setSelectedEntryId] = useState<string>('');
+  const [selectedEntryId, setSelectedEntryId] = useState<string>('easy-dynamics');
 
   const timelineData: TimelineEntry[] = [
     {
