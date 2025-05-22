@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a {
+    @apply text-blue-400 underline hover:text-blue-600;
+  }
+
+  /* Styling for the wrapped icon links */
+  a.icon {
+    @apply text-lavendar no-underline hover:scale-110 transition-transform duration-200;
+  }
+
+  strong {
+    @apply text-light-cyan;
+  }
+
+  em {
+    @apply text-soft-pink
+  }
+}
+
+@layer components {
+  div.icon {
+    @apply transition-transform duration-300 hover:scale-120 hover:text-light-cyan
+  }
+}
+
+@layer utilities {
+
+}
+
+.animated-border-svg {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: border-draw 3s ease forwards;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@theme {
+  /* Custom Colors for theme */
+  --color-light-cyan: oklch(0.8542 0.0517 199.29);
+  --color-soft-pink: oklch(0.8698 0.0723 6.86);
+  --color-off-black: oklch(0.2931 0 0);
+  --color-lavendar: oklch(0.7309 0.0779 304.71);
+
+  --animate-draw-border: border-draw 3s ease forwards;
+  @keyframes border-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  --animate-fadeIn: fadeIn 1s ease forwards;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+}
