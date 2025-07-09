@@ -22,7 +22,7 @@ const TimelinePillar = () => {
 
 function TimelineCard({ entry, onSelect }: CardProps) {
   return (
-    <div className="flex flex-col w-60 gap-1 border border-soft-pink m-4 p-4 rounded-md transition-transform duration-300 hover:scale-110" onClick={() => onSelect(entry.id)}>
+    <div className="flex flex-col w-60 gap-1 border border-soft-pink m-4 p-4 rounded-md transition-transform duration-300 hover:scale-110" onClick={() => onSelect(entry)}>
       <strong className="text-soft-pink">{entry.title}</strong>
       <hr />
       <p className="text-lavendar font-bold">{entry.subtitle}</p>
@@ -33,24 +33,15 @@ function TimelineCard({ entry, onSelect }: CardProps) {
 
 interface ExperiencesProps {
   timelineData: TimelineEntry[];
+  setSelectedTech: ((data: string[]) => void);
+  selectedEntry: TimelineEntry;
+  setSelectedEntry: ((data: TimelineEntry) => void);
 }
 
-const Experiences = ({ timelineData }: ExperiencesProps) => {
-  const [selectedEntryId, setSelectedEntryId] = useState<string>('');
-
-  useEffect(() => {
-    if (timelineData.length > 0) {
-      setSelectedEntryId(timelineData[0]?.id);
-    } else {
-      setSelectedEntryId('');
-    }
-  }, [timelineData]);
-
-  const selectedEntry = timelineData.find(x => x.id == selectedEntryId);
-
+const Experiences = ({ setSelectedEntry, selectedEntry, timelineData }: ExperiencesProps) => {
   return (
     <div className="flex pt-4 pb-4 flex-col gap-4">
-      <div className="text-3xl font-bold">
+      <div className="text-3xl font-bold text-soft-pink">
         <h1>Experiences</h1>
       </div>
       <div className="flex flex-row gap-4">
@@ -60,7 +51,7 @@ const Experiences = ({ timelineData }: ExperiencesProps) => {
             <React.Fragment key={idx}>
               <div className="flex flex-row gap-2">
                 <TimelinePillar />
-                <TimelineCard entry={entry} onSelect={setSelectedEntryId} />
+                <TimelineCard entry={entry} onSelect={setSelectedEntry} />
               </div>
               <TimelineCircle />
             </React.Fragment>

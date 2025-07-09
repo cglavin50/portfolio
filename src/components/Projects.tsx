@@ -68,19 +68,18 @@ interface Props {
 }
 
 export default function ProjectsSection({ sectionRef }: Props) {
-  // const [selectedTech, setSelectedTech] = useState<string[]>([]);
-  const [timelineData, setTimelineData] = useState<TimelineEntry[]>(entries);
+  const [selectedEntry, setSelectedEntry] = useState<TimelineEntry>(entries[0]);
 
   useEffect(() => {
-    console.log(timelineData);
-  }, [timelineData]);
+    console.log(selectedEntry);
+  }, [selectedEntry]);
 
   return (
     <div ref={sectionRef}>
       <hr />
-      <Technologies timelineData={timelineData} setTimelineData={setTimelineData} />
+      <Technologies selectedEntry={selectedEntry} />
       <hr />
-      <Experiences timelineData={timelineData} />
+      <Experiences setSelectedEntry={setSelectedEntry} selectedEntry={selectedEntry} timelineData={entries} />
     </div>
   );
 }

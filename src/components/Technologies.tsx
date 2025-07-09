@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { type IconType } from 'react-icons';
 import { RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript, SiDotnet } from 'react-icons/si';
@@ -8,8 +8,11 @@ import { TbBrandAnsible } from 'react-icons/tb';
 import { type TimelineEntry, entries } from "./Projects";
 
 interface TechnologiesProps {
-  timelineData: TimelineEntry[];
-  setTimelineData: ((data: TimelineEntry[]) => void);
+  // timelineData: TimelineEntry[];
+  // setTimelineData: ((data: TimelineEntry[]) => void);
+  // setSelectedTech: ((data: string[]) => void);
+  // selectedTech: string[];
+  selectedEntry: TimelineEntry;
 }
 
 interface tech {
@@ -71,44 +74,24 @@ const techList: tech[] = [
   },
 ]
 
-const Technologies = ({ setTimelineData }: TechnologiesProps) => {
-  const [activeFilters, setActiveFilters] = useState<string[]>([]);
-  const filterTimeline = (tech: string) => {
-    const item = techList.find(x => x.id == tech);
-    if (item != null) {
-      let newFilters: string[];
+const Technologies = ({ selectedEntry }: TechnologiesProps) => {
+  const [selectedTech, setSelectedTech] = useState<string[]>(selectedEntry.technologies);
 
-      if (item?.active) {
-        newFilters = activeFilters.filter(x => x !== tech);
-      } else {
-        newFilters = [...activeFilters, item.id];
-      }
-
-      item.active = !item.active
-      setActiveFilters(newFilters);
-
-      if (newFilters.length == 0) {
-        setTimelineData(entries);
-      } else {
-        setTimelineData(entries.filter(entry =>
-          newFilters.every(filter =>
-            entry.technologies.includes(filter))
-        ));
-      }
-    }
-  };
-
+  useEffect(() =>  {
+    setSelectedTech(selectedEntry.technologies); 
+  }, [selectedEntry]);
 
   return (
     <div className="flex pt-4 pb-8 flex-col gap-6">
-      <div className="text-3xl flex flex-row gap-3 font-bold">
+      <div className="text-3xl flex flex-row gap-3 font-bold text-soft-pink">
         <h1 className='w-full'>Technologies</h1>
       </div>
       <div className="flex flex-row gap-6 w-full justify-evenly">
         {techList.map((item, idx) => {
           const Icon = item.component;
+          const highlight = selectedTech.includes(item.id);
           return (
-            <div key={idx} onClick={() => filterTimeline(item.id)} className={`transition hover:scale-110 hover:text-light-cyan rounded-lg ${item.active ? 'text-light-cyan' : ''}`} >
+            <div key={idx} className={`transition hover:scale-110 rounded-lg ${highlight ? 'text-light-cyan' : ''}`} >
               <Icon size={48} />
             </div>
           );
