@@ -5,7 +5,7 @@ import { SiTypescript, SiDotnet } from 'react-icons/si';
 import { FaReact, FaDocker, FaPython, FaJava, FaAws } from 'react-icons/fa';
 import { FaGolang } from 'react-icons/fa6';
 import { TbBrandAnsible } from 'react-icons/tb';
-import { type TimelineEntry, entries } from "./Projects";
+import { type TimelineEntry } from "./Projects";
 
 interface TechnologiesProps {
   // timelineData: TimelineEntry[];

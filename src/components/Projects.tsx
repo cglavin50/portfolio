@@ -11,7 +11,7 @@ export interface TimelineEntry {
   technologies: string[];
 }
 
-export const entries: TimelineEntry[] = [
+const entries: TimelineEntry[] = [
   {
     id: 'easy-dynamics',
     title: 'Fullstack Developer',
@@ -60,8 +60,6 @@ export const entries: TimelineEntry[] = [
     technologies: ['aws', 'python',],
   },
 ];
-
-
 
 interface Props {
   sectionRef: React.RefObject<HTMLDivElement | null>;

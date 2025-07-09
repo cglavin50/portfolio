@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { type TimelineEntry } from './Projects';
 
 interface CardProps {
