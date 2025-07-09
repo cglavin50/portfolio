@@ -3,7 +3,7 @@ import { type TimelineEntry } from './Projects';
 
 interface CardProps {
   entry: TimelineEntry;
-  onSelect: (data: string) => void;
+  onSelect: (data: TimelineEntry) => void;
 }
 
 const TimelineCircle = () => {
@@ -33,7 +33,7 @@ function TimelineCard({ entry, onSelect }: CardProps) {
 
 interface ExperiencesProps {
   timelineData: TimelineEntry[];
-  setSelectedTech: ((data: string[]) => void);
+  // setSelectedTech: ((data: string[]) => void);
   selectedEntry: TimelineEntry;
   setSelectedEntry: ((data: TimelineEntry) => void);
 }
